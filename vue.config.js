@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/timeline/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-timeline/' : '/',
 };
