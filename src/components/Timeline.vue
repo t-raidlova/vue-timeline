@@ -3,19 +3,17 @@
     <li class="date" :data-date="formattedDates">
       <h1>{{ fullName }}</h1>
       <p class="tags">tags: {{ tags }}</p>
-      <p>
-        {{ item.about }}
-      </p>
+      <p>{{ item.about }}</p>
     </li>
   </ul>
 </template>
 
 <script>
-import moment from 'moment';
+import moment from "moment";
 
 export default {
-  name: 'Timeline',
-  props: ['item'],
+  name: "Timeline",
+  props: ["item"],
   computed: {
     fullName() {
       return `${this.item.name.first} ${this.item.name.last}`;
@@ -25,19 +23,19 @@ export default {
     },
     formattedDates() {
       let dates = new Date(this.item.registered);
-      return moment(dates).format('LL');
+      return moment(dates).format("LL");
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,600|Saira:400');
+@import url("https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,600|Saira:400");
 
-$background: #e4e4e4;
-$color-primary: #004ffc;
-$font-title: 'Saira', sans-serif;
-$font-text: 'Chivo', sans-serif;
+$background: #fafafa;
+$color-primary: #0b5184;
+$font-title: "Saira", sans-serif;
+$font-text: "Chivo", sans-serif;
 
 body {
   margin: 0;
@@ -83,7 +81,6 @@ ul {
       position: absolute;
     }
 
-    //date
     &:before {
       left: -14rem;
       content: attr(data-date);
@@ -94,14 +91,14 @@ ul {
       font-family: $font-title;
     }
 
-    //dot
     &:after {
-      left: -3.9rem;
-      background: lighten($color-primary, 10%);
+      left: -4.1rem;
+      background: $color-primary;
+      border: solid 4px lighten($color-primary, 60%);
       border-radius: 50%;
       height: 1.2rem;
       width: 1.2rem;
-      content: '';
+      content: "";
       top: 0;
     }
   }
